@@ -4,7 +4,7 @@ import sys
 import os
 import subprocess
 
-os.chdir(os.path.dirname(sys.argv[0]))
+#os.chdir(os.path.dirname(sys.argv[0]))
 rela_dir = "../"
 all_files = os.listdir(rela_dir)
 
