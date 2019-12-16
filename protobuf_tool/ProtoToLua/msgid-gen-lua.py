@@ -2,9 +2,9 @@
 import sys
 import os
 
-msgid_conf = "../../msgid.conf"
-targetMsgIDDefine = "../../pb_lua/Config/MsgIDDefine.lua";
-targetMsgIDMap = "../../pb_lua/Config/MsgIDMap.lua";
+msgid_conf = "../msgid.conf"
+targetMsgIDDefine = "../pb_lua/Config/MsgIDDefine.lua";
+targetMsgIDMap = "../pb_lua/Config/MsgIDMap.lua";
 
 
 class MsgInfo(object):

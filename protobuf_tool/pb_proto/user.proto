@@ -1,26 +1,28 @@
+syntax = "proto3";
+
 package Net.Protol.user;
 
 message req_create_user
 {
-	//optional int32 sex = 1[default = 0];	            //0是男，1是女
-	optional string name = 2[default = ''];	            //玩家名字
+	//int32 sex = 1;	            //0是男，1是女
+	string name = 2;	            //玩家名字
 }
 
 message rsp_create_user
 {
-	optional int32 result = 1[default = 0];	           //0成功，-1是名字有敏感词，-2是名字已经存在
-	//optional int32 sex = 2[default = 0];	           //0是男，1是女
-	optional string name = 3[default = ''];	           //玩家名字
-	optional int32 use_icon = 4[default = 0];
+	int32 result = 1;	           //0成功，-1是名字有敏感词，-2是名字已经存在
+	//int32 sex = 2;	           //0是男，1是女
+	string name = 3;	           //玩家名字
+	int32 use_icon = 4;
 }
 
 message req_change_name
 {
-	optional string name = 1[default = ''];
+	string name = 1;
 }
 
 message rsp_change_name
 {
-	optional int32 result =1[default = 0];
-	optional string name = 2[default = ''];
+	int32 result =1;
+	string name = 2;
 }
