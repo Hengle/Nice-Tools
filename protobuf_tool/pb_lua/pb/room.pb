@@ -1,27 +1,28 @@
 
-¸
+“
 
-room.protoNet.Protol.roomcommon.proto"1
+room.protoroomcommon.proto"1
 req_join_match
 battle_type (R
-battleType"‚
+battleType"w
 rsp_join_match
-result (Rresult7
-player (2.Net.Protol.common.match_playerRplayer
+result (Rresult,
+player (2.common.match_playerRplayer
 battle_type (R
-battleType"o
+battleType"d
 ntf_join_match_mateinfo
-result (Rresult<
-	mate_list (2.Net.Protol.common.match_playerRmateList"
+result (Rresult1
+	mate_list (2.common.match_playerRmateList"ù
 ntf_join_match_result
 result (Rresult"
 battle_svr_id (RbattleSvrId
-	battle_id (RbattleId<
-	mate_list (2.Net.Protol.common.match_playerRmateList>
+	battle_id (RbattleId1
+	mate_list (2.common.match_playerRmateList3
 
-enemy_list (2.Net.Protol.common.match_playerR	enemyList
+enemy_list (2.common.match_playerR	enemyList
 battle_type (R
 battleType"
 req_cancel_join_match"/
 rsp_cancel_join_match
-result (Rresultbproto3
+result (RresultB
+Net.Protol.roombproto3

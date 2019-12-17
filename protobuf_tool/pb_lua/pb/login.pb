@@ -1,21 +1,22 @@
 
-Ä
-login.protoNet.Protol.logincommon.proto"?
+¡
+login.protologincommon.proto"4
 test2
-c (Rc(
-ss (2.Net.Protol.common.test3Rss"<
+c (Rc
+ss (2.common.test3Rss"1
 test1
-a (Ra%
-b (2.Net.Protol.login.test2Rb"
+a (Ra
+b (2.login.test2Rb"
 	req_login
-flag (Rflag"Æ
+flag (Rflag"°
 	rsp_login
 result (Rresult
 	game_time (RgameTime
-status (Rstatus?
-client_info (2.Net.Protol.common.client_infoR
-clientInfo+
-test (2.Net.Protol.login.test1Rtest"$
+status (Rstatus4
+client_info (2.common.client_infoR
+clientInfo 
+test (2.login.test1Rtest"$
 
 ntf_logout
-reason (Rreasonbproto3
+reason (RreasonB
+Net.Protol.loginbproto3

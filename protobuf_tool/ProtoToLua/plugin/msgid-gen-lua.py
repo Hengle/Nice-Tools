@@ -1,10 +1,9 @@
-#! python2
 import sys
 import os
 
-msgid_conf = "../msgid.conf"
-targetMsgIDDefine = "../pb_lua/Config/MsgIDDefine.lua";
-targetMsgIDMap = "../pb_lua/Config/MsgIDMap.lua";
+msgid_conf = "../../msgid.conf"
+targetMsgIDDefine = "../../pb_lua/Config/MsgIDDefine.lua";
+targetMsgIDMap = "../../pb_lua/Config/MsgIDMap.lua";
 
 
 class MsgInfo(object):
@@ -25,7 +24,8 @@ def ParseMsgIDMap(fs,msgidList):
 		tmpMsgID = _msgDef.msgid;
 		tmpModuleName = _msgDef.msgname.split(".")[0];
 		tmpMsgName = _msgDef.msgname.split(".")[1];
-		fs.writelines("\t[%s] = (require(\"Net.Protol.%s_pb\")).%s,"% (tmpMsgID, tmpModuleName, tmpMsgName));
+		# fs.writelines("\t[%s] = (require(\"Net.Protol.%s_pb\")).%s,"% (tmpMsgID, tmpModuleName, tmpMsgName));
+		fs.writelines("\t[%s] = \"%s.%s\","% (tmpMsgID, tmpModuleName, tmpMsgName));
 
 	fs.writelines("}");
 	fs.writelines("return config");
@@ -53,19 +53,23 @@ def parse_msgfile(msgid_conf):
 
 		if not len(line) or line.startswith("#"):
 			continue
-		array_info = line.split("=")
+
+		valide = line.split("#")[0]
+		valide = valide.strip().rstrip()
+		
+		array_info = valide.split("=")
 		msgid = array_info[0].strip().rstrip()	#MSGID
 		
-		if int(msgid) < 10000:		#server internal msg
+		if int(msgid) < 1:		#server internal msg
 			continue
 		
-		array_info = array_info[1].split(',')	#MSGNAME
-		msgname = array_info[0].strip().rstrip()
+		#array_info = array_info[1].split(',')	#MSGNAME
+		msgname = array_info[1].strip().rstrip()
 		
-		array_info = array_info[1].split("#")		
+		#array_info = array_info[1].split("#")		
 		comment = ""
-		if len(array_info) > 1:
-			comment = "--" + array_info[1].strip().rstrip()
+		#if len(array_info) > 1:
+			#comment = "--" + array_info[1].strip().rstrip()
 		msg_info_list.append(MsgInfo(msgid,msgname,comment))
 		
 	return msg_info_list

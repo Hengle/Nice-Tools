@@ -1,13 +1,13 @@
 
-ç
-common.protoNet.Protol.common"B
+å
+common.protocommon"B
 test4
 f (Rf
 ccc (	Rccc
-cmd_data (	RcmdData"?
+cmd_data (	RcmdData"4
 test3
-d (Rd(
-cc (2.Net.Protol.common.test4Rcc"E
+d (Rd
+cc (2.common.test4Rcc"E
 client_info
 	user_name (	RuserName
 use_icon (RuseIcon"ï
@@ -18,4 +18,5 @@
 icon (Ricon
 race (Rrace
 
-race_level (R	raceLevelbproto3
+race_level (R	raceLevelB
+Net.Protol.commonbproto3

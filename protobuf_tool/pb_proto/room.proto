@@ -1,5 +1,7 @@
 syntax = "proto3";
-package Net.Protol.room;
+
+package room;
+option java_package = "Net.Protol.room";
 
 import 'common.proto';
 

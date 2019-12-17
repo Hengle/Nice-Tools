@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-package Net.Protol.user;
+package user;
+option java_package = "Net.Protol.user";
+
 
 message req_create_user
 {
