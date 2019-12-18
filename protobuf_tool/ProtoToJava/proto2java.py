@@ -107,7 +107,7 @@ def ParseMsgIDDef(fs,msgidList):
 
 def ParseMsgIDDefineDic(fs,msgidList):
 	fs.writelines("");
-	fs.writelines("package Net.Protol;");
+	fs.writelines("package net.protol;");
 	fs.writelines("public class MsgIDDefineDic");
 	fs.writelines("{");
 
@@ -129,16 +129,19 @@ def parse_msgfile(msgid_conf):
 		array_info = line.split("=")
 		msgid = array_info[0].strip().rstrip()	#MSGID
 		
-		if int(msgid) < 10000:		#server internal msg
+		if int(msgid) < 100:		#server internal msg
 			continue
 		
-		array_info = array_info[1].split(',')	#MSGNAME
-		msgname = array_info[0].strip().rstrip()
+		#array_info = array_info[1].split(',')	#MSGNAME
+		#msgname = array_info[0].strip().rstrip()
 		
 		array_info = array_info[1].split("#")		
 		comment = ""
+		msgname = array_info[0].strip().rstrip()
+
 		if len(array_info) > 1:
 			comment = "//" + array_info[1].strip().rstrip()
+
 		msg_info_list.append(MsgInfo(msgid,msgname,comment))
 		
 	return msg_info_list
@@ -156,7 +159,7 @@ class WrapFile:
 	
 l=parse_msgfile(msgid_conf)
 
-targetMsgIDPath = "../pb_java/Net/Protol/MsgIDDefineDic.java";
+targetMsgIDPath = "../pb_java/net/protol/MsgIDDefineDic.java";
 targetCSPath = "../pb_java/MsgIDDefine.java";
 targetCSPath2 = "../pb_java/MsgIDDef.java";
 
