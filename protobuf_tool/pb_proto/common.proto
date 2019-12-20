@@ -32,3 +32,8 @@ message match_player
 	int32 race = 5;
 	int32 race_level = 6;
 }
+
+message heart_beat
+{
+	int32 uid = 1;
+}
